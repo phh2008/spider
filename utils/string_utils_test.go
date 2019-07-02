@@ -35,3 +35,27 @@ func Test3(t *testing.T) {
 		fmt.Println(arr[1])
 	}
 }
+
+func Test4(t *testing.T) {
+	reg, _ := regexp.Compile("：|\\s+|\u3002")
+	str := `：
+                                    主要生产枪瞄，激光测距仪，望远镜，放大镜，医疗器材，镜头等各种高中档光学镜片。
+                                    `
+	fmt.Println(str)
+	str = reg.ReplaceAllString(str, "")
+	fmt.Println(str)
+}
+
+func Test5(t *testing.T) {
+	var aa string
+	arr := strings.Split(aa, "-")
+	fmt.Println("len: ", len(arr))
+	fmt.Println("[0]: ", arr[0])
+	fmt.Println("[0]=='': ", arr[0] == "")
+}
+
+func Test6(t *testing.T) {
+	ret := RegBlank.ReplaceAllString("传    真", "")
+	//ret := regexp.MustCompile("(&nbsp;)+").ReplaceAllString("电&nbsp;&nbsp;&nbsp;话", "")
+	fmt.Println(ret)
+}
